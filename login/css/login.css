@@ -1,0 +1,135 @@
+body {
+padding-top: 90px;
+background-image:url(back.jpg) ;
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+body{
+background-color: #22d686;
+}
+
+
+.panel {
+border-radius: 5px;
+}
+
+.panel-heading{
+  padding-left: 50px;
+}
+label {
+font-weight: 300;
+}
+
+
+.panel-login  label {
+padding-left: 25px;
+font-weight: 300;
+display: inline-block;
+position: relative;
+}
+.panel-login {
+padding-left: 20px;
+}
+.panel-login label {
+display: inline-block;
+position: absolute;
+width: 17px;
+height: 17px;
+border: 1px solid #cccccc;
+border-radius: 3px;
+background-color: #fff;
+}
+.panel-login label {
+display: inline-block;
+position: absolute;
+width: 16px;
+height: 16px;
+padding-left: 3px;
+padding-top: 1px;
+font-size: 11px;
+color: #555555;
+}
+
+.panel-login h2{
+font-size: 20px;
+font-weight: 300;
+margin: 30px;
+}
+
+.panel-login>.panel-heading {
+color: #848c9d;
+background-color: #e8e9ec;
+border-color: #fff;
+text-align:center;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+padding: 0px 15px;
+}
+
+.panel-login .form-group {
+padding: 0 30px;
+}
+.panel-login>.panel-heading .login {
+padding: 20px 30px;
+border-bottom-left-radius: 5px;
+}
+
+.panel-login>.panel-heading .register {
+padding: 20px 30px;
+background: #2d3b55;
+border-bottom-right-radius: 5px;
+}
+
+.panel-login>.panel-heading a{
+text-decoration: none;
+color: #666;
+font-weight: 300;
+font-size: 16px;
+}
+.panel-login>.panel-heading a#register-form-link {
+color: #fff;
+width: 100%;
+text-align: right;
+
+}
+
+.panel-login>.panel-heading a#login-form-link {
+width: 100%;
+text-align: left;
+
+}
+.panel-login>.panel-heading .tabs{
+  padding: 0;
+}
+
+.panel-login input{
+height: 45px;
+border: 0;
+font-size: 16px;
+padding: 6px 0px;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-signup:hover,
+.btn-signup:focus{
+color:  #FFFFFF;
+background-color: #6785bc;
+}
+.btn-login{
+  margin-top: 10px;
+}
+
+.btn-register:hover,
+.btn-register:focus {
+color: #FFFFFF;
+background-color: #6785bc;
+}
