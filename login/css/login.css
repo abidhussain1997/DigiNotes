@@ -1,11 +1,7 @@
 body {
 padding-top: 90px;
-background-image:url(back.jpg) ;
 }
 
-body{
-background-color: #22d686;
-}
 
 .btn {
   background-color: #E8E9EC;
@@ -49,7 +45,7 @@ width: 17px;
 height: 17px;
 border: 1px solid #cccccc;
 border-radius: 3px;
-background-color: #fff;
+background-color: #E0E0E0;
 }
 .panel-login label {
 display: inline-block;
