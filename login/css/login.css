@@ -3,6 +3,14 @@ padding-top: 90px;
 background-image:url(back.jpg) ;
 }
 
+body{
+background-color: #22d686;
+}
+
+.btn {
+  background-color: #E8E9EC;
+}
+
 .profile-img-card {
   width: 96px;
   height: 96px;
@@ -12,10 +20,6 @@ background-image:url(back.jpg) ;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-body{
-background-color: #22d686;
-}
-
 
 .panel {
 border-radius: 5px;
@@ -36,7 +40,7 @@ display: inline-block;
 position: relative;
 }
 .panel-login {
-padding-left: 20px;
+padding: 20px;
 }
 .panel-login label {
 display: inline-block;
@@ -117,6 +121,7 @@ font-size: 16px;
 padding: 6px 0px;
 }
 
+
 .btn-login:hover,
 .btn-login:focus,
 .btn-signup:hover,
@@ -124,6 +129,7 @@ padding: 6px 0px;
 color:  #FFFFFF;
 background-color: #6785bc;
 }
+
 .btn-login{
   margin-top: 10px;
 }
@@ -132,4 +138,8 @@ background-color: #6785bc;
 .btn-register:focus {
 color: #FFFFFF;
 background-color: #6785bc;
+}
+
+.form-control.btn.btn-register{
+  margin-top: 10px;
 }
