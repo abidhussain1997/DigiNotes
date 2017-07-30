@@ -1,0 +1,8 @@
+create database -
+  CREATE DATABASE diginotes
+
+create teacher_signup table -
+  CREATE TABLE teacher_signup( ID int NOT NULL AUTO_INCREMENT, Name varchar(255) NOT NULL, Email varchar(255), Password varchar(255), CollegeCode varchar(255), PRIMARY KEY (ID) );
+
+create subject table -
+  CREATE TABLE subject ( SubjectID int NOT NULL AUTO_INCREMENT, SubjectName VARCHAR(255), SubjectCourse VARCHAR(255), SubjectSem int, TeacherID int,  TeacherClgCode VARCHAR(255), Location VARCHAR(255), PRIMARY KEY (SubjectID), FOREIGN KEY (TeacherID) REFERENCES teacher_signup(ID));

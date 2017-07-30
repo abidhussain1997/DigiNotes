@@ -32,6 +32,10 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
     if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
       echo "<br> Subject added";
       mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+      echo "<br><br><br> location is : " . $sublocation;
+      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+      $conn->query($insertSubject);
     } else {
       echo "<br> subject already exists";
     }
@@ -45,6 +49,10 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
     if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
       echo "<br> Subject added";
       mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+      echo "<br><br><br> location is : " . $sublocation;
+      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+      $conn->query($insertSubject);
     } else {
       echo "<br> subject already exists";
     }
@@ -53,10 +61,17 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
     if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
       echo "Subject added";
       mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+      echo "<br><br><br> location is : " . $sublocation;
+      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+      $conn->query($insertSubject);
     } else {
       echo "<br> subject already exists";
     }
   }
 }
 
+
+
+$conn->close();
  ?>
