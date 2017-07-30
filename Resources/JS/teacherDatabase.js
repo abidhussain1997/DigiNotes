@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   $("#submit").click(function(event){
     event.preventDefault();
@@ -8,9 +9,7 @@ $(document).ready(function(){
       teacherpassword:$('#teacherpassord').val(),
       teacheremail:$('#teacheremail').val(),
       teacherclgcode:$('#teacherclgcode').val(),
-      teachercourse:$('#teachercourse').val()
     };
-    console.log(FormData);
     $.ajax({
       type: 'POST',
       url: 'teacherSignupDatabase.php', //http://192.168.1.8:8082/
@@ -33,8 +32,6 @@ $(document).ready(function(){
       teacher_password:$("#teacher-password").val()
     };
 
-    console.log(FormData);
-
     $.ajax({
       type: 'POST',
       url: 'teacherSigninDatabase.php',
@@ -49,9 +46,16 @@ $(document).ready(function(){
         $('.errordiv').css('display','inline-block');
       } else if (flag == 0) {
         $('.errordiv').css('display','none');
-        window.location.href = "TeacherLogin.html";
+        window.location.href = "TeacherDashboard.html";
       }
     })
 
   });
+});
+
+
+$.get("TeacherDashboard.php", function(data){
+
+  document.getElementById('usernametext').innerHTML = data;
+  inner("Data: " + data);
 });

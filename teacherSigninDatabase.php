@@ -3,6 +3,7 @@
 $teacher_username = $_POST['teacher_username'];
 $teacher_password = $_POST['teacher_password'];
 $flag = 0;
+$teacher_password = sha1($teacher_password);
 
 $servername = "localhost";
 $username = "root";
@@ -21,6 +22,18 @@ $result = $conn->query($check);
 
 if ($result->num_rows > 0) {
   $flag = 0;
+  $row = mysqli_fetch_assoc($result);
+  $id = $row['ID'];
+  $name = $row['Name'];
+  $email = $row['Email'];
+  $collagecode = $row['CollegeCode'];
+  //Start your session
+      session_start();
+      //Store the name in the session
+      $_SESSION['userloginid'] = $id;
+      $_SESSION['userloginname'] = $name;
+      $_SESSION['userloginemail'] = $email;
+      $_SESSION['userlogincollegecode'] = $collagecode;
 } else {
   $flag = 1;
 }
