@@ -76,19 +76,19 @@
         </div>
       </div>
     </div>
-
+  </div>
 <script type="text/javascript">
 $(function() {
     $('#student-form').click(function(e) {
-    	$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
+    $("#login-form").delay(200).fadeIn(200);
+ 		$("#register-form").fadeOut(200);
 		$('#teacher-form').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-	$('#teacher-form').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
+	  $('#teacher-form').click(function(e) {
+		$("#register-form").delay(200).fadeIn(200);
+ 		$("#login-form").fadeOut(200);
 		$('#student-form').removeClass('active');
 		$(this).addClass('active');
 		e.preventDefault();

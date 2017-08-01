@@ -35,7 +35,11 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
       $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
       echo "<br><br><br> location is : " . $sublocation;
       $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      $conn->query($insertSubject);
+      if ($conn->query($insertSubject) === TRUE) {
+          echo "New record created successfully";
+      } else {
+          echo "Error: " . $insertSubject . "<br>" . $conn->error;
+      }
     } else {
       echo "<br> subject already exists";
     }
@@ -52,7 +56,11 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
       $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
       echo "<br><br><br> location is : " . $sublocation;
       $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      $conn->query($insertSubject);
+      if ($conn->query($insertSubject) === TRUE) {
+          echo "New record created successfully";
+      } else {
+          echo "Error: " . $insertSubject . "<br>" . $conn->error;
+      }
     } else {
       echo "<br> subject already exists";
     }
@@ -64,7 +72,11 @@ if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
       $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
       echo "<br><br><br> location is : " . $sublocation;
       $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      $conn->query($insertSubject);
+      if ($conn->query($insertSubject) === TRUE) {
+          echo "New record created successfully";
+      } else {
+          echo "Error: " . $insertSubject . "<br>" . $conn->error;
+      }
     } else {
       echo "<br> subject already exists";
     }
