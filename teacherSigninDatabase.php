@@ -13,7 +13,7 @@ $dbName = "diginotes";
 $conn = new mysqli($servername, $username, $password, $dbName);
 
 if (!$conn) {
-  die("Connection Failed: " . mysql_error());
+    die("Connection Failed: " . mysql_error());
 } else {
 }
 
@@ -21,23 +21,22 @@ $check = "SELECT * FROM teacher_signup WHERE Email Like '$teacher_username' AND 
 $result = $conn->query($check);
 
 if ($result->num_rows > 0) {
-  $flag = 0;
-  $row = mysqli_fetch_assoc($result);
-  $id = $row['ID'];
-  $name = $row['Name'];
-  $email = $row['Email'];
-  $collagecode = $row['CollegeCode'];
-  //Start your session
-      session_start();
-      //Store the name in the session
-      $_SESSION['userloginid'] = $id;
-      $_SESSION['userloginname'] = $name;
-      $_SESSION['userloginemail'] = $email;
-      $_SESSION['userlogincollegecode'] = $collagecode;
+    $flag = 0;
+    $row = mysqli_fetch_assoc($result);
+    $id = $row['ID'];
+    $name = $row['Name'];
+    $email = $row['Email'];
+    $collagecode = $row['CollegeCode'];
+    //Start your session
+    session_start();
+    //Store the name in the session
+    $_SESSION['userloginid'] = $id;
+    $_SESSION['userloginname'] = $name;
+    $_SESSION['userloginemail'] = $email;
+    $_SESSION['userlogincollegecode'] = $collagecode;
 } else {
-  $flag = 1;
+    $flag = 1;
 }
 
 echo json_encode($flag);
 $conn->close();
- ?>

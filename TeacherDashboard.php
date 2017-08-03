@@ -18,72 +18,74 @@ $dbName = "diginotes";
 
 $conn = new mysqli($servername, $username, $password, $dbName);
 
+$card = "SELECT * FROM subject WHERE TeacherID=userloginid and TeacherClgCode='$userlogincollegecode'";
+$result = $conn->query($card);
+echo $result->num_rows;
+
 if (!$conn) {
-  die("Connection Failed: " . mysql_error());
+    die("Connection Failed: " . mysql_error());
 }
 
 if (!file_exists(getcwd() . '/Data/' . $userloginemail)) {
-  echo "user folder creates ";
-  mkdir(getcwd() . '/Data/' . $userloginemail, 0777, true);
+    echo "user folder creates ";
+    mkdir(getcwd() . '/Data/' . $userloginemail, 0777, true);
 
-  if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course)) {
-    echo "<br>course created ";
-    mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course, 0777, true);
-    if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
-      echo "<br> Subject added";
-      mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
-      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
-      echo "<br><br><br> location is : " . $sublocation;
-      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      if ($conn->query($insertSubject) === TRUE) {
-          echo "New record created successfully";
-      } else {
-          echo "Error: " . $insertSubject . "<br>" . $conn->error;
-      }
+    if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course)) {
+        echo "<br>course created ";
+        mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course, 0777, true);
+        if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
+            echo "<br> Subject added";
+            mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+            $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+            echo "<br><br><br> location is : " . $sublocation;
+            $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+            if ($conn->query($insertSubject) === true) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $insertSubject . "<br>" . $conn->error;
+            }
+        } else {
+            echo "<br> subject already exists";
+        }
     } else {
-      echo "<br> subject already exists";
+        mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
     }
-  } else {
-    mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
-  }
 } else {
-  if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course)) {
-    echo "<br> course created ";
-    mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course, 0777, true);
-    if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
-      echo "<br> Subject added";
-      mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
-      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
-      echo "<br><br><br> location is : " . $sublocation;
-      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      if ($conn->query($insertSubject) === TRUE) {
-          echo "New record created successfully";
-      } else {
-          echo "Error: " . $insertSubject . "<br>" . $conn->error;
-      }
+    if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course)) {
+        echo "<br> course created ";
+        mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course, 0777, true);
+        if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
+            echo "<br> Subject added";
+            mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+            $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+            echo "<br><br><br> location is : " . $sublocation;
+            $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+            if ($conn->query($insertSubject) === true) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $insertSubject . "<br>" . $conn->error;
+            }
+        } else {
+            echo "<br> subject already exists";
+        }
     } else {
-      echo "<br> subject already exists";
+        if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
+            echo "Subject added";
+            mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
+            $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
+            echo "<br><br><br> location is : " . $sublocation;
+            $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
+            if ($conn->query($insertSubject) === true) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $insertSubject . "<br>" . $conn->error;
+            }
+        } else {
+            echo "<br> subject already exists";
+        }
     }
-
-  } else {
-    if (!file_exists(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name)) {
-      echo "Subject added";
-      mkdir(getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name, 0777, true);
-      $sublocation = getcwd() . '/Data/' . $userloginemail . "/" . $subject_course . "/" . $subject_name;
-      echo "<br><br><br> location is : " . $sublocation;
-      $insertSubject = "INSERT INTO subject VALUES (DEFAULT, '$subject_name', '$subject_course', '$subject_sem' , '$userloginid', '$userlogincollegecode', '$sublocation')";
-      if ($conn->query($insertSubject) === TRUE) {
-          echo "New record created successfully";
-      } else {
-          echo "Error: " . $insertSubject . "<br>" . $conn->error;
-      }
-    } else {
-      echo "<br> subject already exists";
-    }
-  }
 }
 
 
 
 $conn->close();
- ?>

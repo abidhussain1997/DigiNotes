@@ -1,60 +1,103 @@
-.navbar{
+.navbar {
   background-color: #29B6F6;
   border-radius: 0px !important;
 }
 
-.navbar-text{
+.cardsubject{
+  height: 90%;
+  width:100%;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cardholder{
+  margin-top: 3%;
+}
+
+.cardee{
+  height: 180px;
+  width: 22%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.6s ;
+  padding: 0px !important;
+  cursor: pointer;
+}
+
+.cardee:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.errfill {
+  margin-bottom: 0px !important;
+  margin-top: 20px;
+  display: none;
+}
+
+.successsubject {
+  margin-bottom: 0px !important;
+  margin-top: 20px;
+  display: none;
+}
+
+.navbar-text {
   color: #f5f5f5;
   font-size: 24px;
 }
 
-.glyphicon-log-out{
+.glyphicon-log-out {
   font-size: 20px;
 }
 
-a.logoutbtn{
+a.logoutbtn {
   font-size: 20px;
   margin-top: 5px;
   color: #f5f5f5;
 }
 
-a.logoutbtn:hover{
+a.logoutbtn:hover {
   text-decoration: none;
   color: #f5f5f5;
-  background-color: transparent !important ;
+  background-color: transparent !important;
 }
 
-.button-wrap{
+.button-wrap {
   display: inline-block;
 }
 
-.addbtn:hover{
+.addbtn:hover {
   opacity: .85;
   cursor: pointer;
 }
 
-.addbtn{
+.addbtn {
   background: #01579B;
   text-align: center;
   padding: 12px;
   border-radius: 5px;
 }
 
-.add-form{
+.add-form {
   padding-bottom: 20px;
   /*box-shadow: 0 4px 6px -6px #232323;*/
 }
 
-.add-form{
+.add-form {
   display: none;
 }
 
-
+.cardsize{
+  width: 23% !important;
+  margin: 1%;
+}
 @media screen and (max-width: 767px) {
-
+  .charset{
+    width: 25;
+  }
   /*.button.addbtn{
     margin-bottom: 20px;
   }*/
-
-
 }
