@@ -14,19 +14,18 @@
   <h1> Teacher Signup</h1>
 <div class="my-form">
 <div class="col-sm-6 no-padding">
-<img src="imgcard2.png" style="margin-top:25%"  alt="">
+<!-- <img src="imgcard2.png" style="margin-top:25%"  alt=""> -->
 </div>
 <div class="col-sm-6 form-bg">
 <div class="main-form">
 <div role="tabpanel" class="tab-pane" id="signup">
-<form action="" method="get" >
-<input class="form-control" type="text" id="teacherid" value="" placeholder="Full Name">
+<form  method="post" >
+<input class="form-control" type="text" id="teachername" value="" placeholder="Full Name">
 <input class="form-control" type="email" id="teacheremail" value="" placeholder="Email Address">
 <input class="form-control" type="password" id="teacherpassord" value="" placeholder="Password">
 <input class="form-control" type="password"  id="teacherconpassord"value="" placeholder="Confirm Password">
 <input class="form-control" type="text" id="teacherclgcode"value="" placeholder="Colege code">
-<input class="form-control" type="text" id="teachercourse" value="" placeholder="Course">
-<input class="btn btn-submit" type="submit" value="Sign up">
+<input class="btn btn-submit" type="submit" id="submit" value="Sign up">
 </form>
 </div>
 </div>
@@ -36,5 +35,6 @@
 </div>
 </div>
 </div>
+<script src="Resources/JS/teacherDatabase.js"></script>
 </body>
 </html>
