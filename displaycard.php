@@ -22,14 +22,10 @@ $numArray = array($num);
 $cardData = array();
 // $cardData['num'] = ($num);
 while ($row = mysqli_fetch_assoc($cardresult)) {
-    $cardData[]= array("subjectname"=>$row[SubjectName]);
+    $cardData[]= array("subjectname"=>$row[SubjectName],
+                        "subjectcourse"=>$row[SubjectCourse],
+                        "subjectsem"=>$row[SubjectSem]);
 }
 
-
-
-// echo $cardData[0];
-// echo $cardData[1];
-// echo $cardData[2];
-// echo $cardData[3];
   $arrmerg = array_merge($numArray, $cardData);
 echo json_encode($arrmerg);

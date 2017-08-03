@@ -4,13 +4,31 @@
 }
 
 .cardsubject{
-  height: 90%;
+  height: 55%;
   width:100%;
   font-size: 30px;
   font-family: 'Roboto', sans-serif;
+  color: #29B6F6;
+  margin: 0px ;
   display:flex;
   align-items: center;
   justify-content: center;
+}
+
+.cardcourse{
+  color: #01579B;
+  font-size: 20px;
+  padding: 10px;
+  margin: 0px ;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cardsem{
+  font-size: 20px;
+  padding: 10px;
+  margin: 0px ;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
 }
 
 #cardholder{

@@ -6,13 +6,18 @@ $(document).ready(function(){
     datatype: 'json',
     encode: true
   }).done(function(num) {
+    console.log(num);
     var json = JSON.parse(num);
-    console.log(json[2].subjectname);
+    console.log(json[1].subjectname);
     //[5,{"subjectname":"GGG"},{"subjectname":"OR"},{"subjectname":"SAM"},{"subjectname":"ABID"},{"subjectname":"ERR"}]
     for(i = 0; i < json[0]; i++) {
       $('.row').append('<div id="card'+ i +'" class="cardee col-md-3 cardsize" />');
+      $("#card" + i).append('<h3 class="cardcourse' + i +' cardcourse"/>');
+      console.log( $(".cardcourse" + i).append(json[i+1].subjectcourse));
       $("#card" + i).append('<h5 class="cardsubject' + i +' cardsubject"/>');
       console.log( $(".cardsubject" + i).append(json[i+1].subjectname));
+      $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
+      console.log( $(".cardsem" + i).append(json[i+1].subjectsem));
       $
     }
   })
