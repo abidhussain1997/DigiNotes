@@ -18,7 +18,7 @@ $(document).ready(function(){
       console.log( $(".cardsubject" + i).append(json[i+1].subjectname));
       $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
       console.log( $(".cardsem" + i).append(json[i+1].subjectsem));
-      $
+
     }
   })
 });

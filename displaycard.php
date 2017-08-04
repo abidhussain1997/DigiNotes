@@ -24,8 +24,10 @@ $cardData = array();
 while ($row = mysqli_fetch_assoc($cardresult)) {
     $cardData[]= array("subjectname"=>$row[SubjectName],
                         "subjectcourse"=>$row[SubjectCourse],
-                        "subjectsem"=>$row[SubjectSem]);
+                        "subjectsem"=>$row[SubjectSem],
+                      "subjectid"=>$row[SubjectID]);
 }
+  
 
   $arrmerg = array_merge($numArray, $cardData);
 echo json_encode($arrmerg);

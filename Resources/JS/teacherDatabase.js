@@ -51,10 +51,3 @@ $(document).ready(function() {
 
   });
 });
-
-
-$.get("TeacherDashboard.php", function(data) {
-
-  document.getElementById('usernametext').innerHTML = data;
-  inner("Data: " + data);
-});
