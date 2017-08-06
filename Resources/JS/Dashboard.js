@@ -11,21 +11,41 @@ $(document).ready(function(){
     console.log(json[1].subjectname);
     //[5,{"subjectname":"GGG"},{"subjectname":"OR"},{"subjectname":"SAM"},{"subjectname":"ABID"},{"subjectname":"ERR"}]
     for(i = 0; i < json[0]; i++) {
-      $('.row').append('<div id="card'+ i +'" class="cardee col-md-3 cardsize" />');
+      $('.row').append(' <a href="TeacherFilesDashboard.html" <div id="card'+ i +'" class="cardee col-xs-3 cardsize" />'); //<a href="login.html"
       $("#card" + i).append('<h3 class="cardcourse' + i +' cardcourse"/>');
-      console.log( $(".cardcourse" + i).append(json[i+1].subjectcourse));
+      $(".cardcourse" + i).append(json[i+1].subjectcourse);
       $("#card" + i).append('<h5 class="cardsubject' + i +' cardsubject"/>');
-      console.log( $(".cardsubject" + i).append(json[i+1].subjectname));
+      $(".cardsubject" + i).append(json[i+1].subjectname);
       $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
-      console.log( $(".cardsem" + i).append(json[i+1].subjectsem));
+      $(".cardsem" + i).append(json[i+1].subjectsem);
+      $("#card" + i).append('<p class="cardid' + i +' cardid"/>');
+      $(".cardid" + i).append(json[i+1].subjectid);
 
     }
+    $('.cardee').click(function(event) {
+        var status = $(this).attr('id');
+        var cardsubid = $("#" + status +" p").text();
+        console.log(cardsubid);
+
+        $.ajax({
+          type: 'POST',
+          url: 'teacherFilesLoactionSearch.php',
+          data: { cardsubid : cardsubid },
+          datatype:'json',
+          encode: true
+        }).done(function(location){
+          console.log("done with p")
+        });
+
+    });
   })
 });
 
 
 
 $(document).ready(function() {
+
+
   $("#addsub").click(function(event) {
     event.preventDefault();
     if ($('input[type=text]#subname').val() == "") {

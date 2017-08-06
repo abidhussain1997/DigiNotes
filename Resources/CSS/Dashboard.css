@@ -3,6 +3,14 @@
   border-radius: 0px !important;
 }
 
+.cardid{
+  display: none;
+}
+
+#loading{
+  display: none;
+}
+
 .cardsubject{
   height: 55%;
   width:100%;
@@ -35,14 +43,22 @@
   margin-top: 3%;
 }
 
+.cardlink{
+  text-decoration: none !important;
+}
+
 .cardee{
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+
   height: 180px;
   width: 22%;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.6s ;
+  transition: all 0.7s ;
   padding: 0px !important;
   cursor: pointer;
+  text-decoration: none !important;
 }
 
 .cardee:hover {
@@ -93,6 +109,7 @@ a.logoutbtn:hover {
 
 .addbtn {
   background: #01579B;
+  transition: 1s;
   text-align: center;
   padding: 12px;
   border-radius: 5px;
@@ -110,12 +127,27 @@ a.logoutbtn:hover {
 .cardsize{
   width: 23% !important;
   margin: 1%;
+  min-width: 23% !important
 }
+
 @media screen and (max-width: 767px) {
   .charset{
     width: 25;
   }
-  /*.button.addbtn{
-    margin-bottom: 20px;
-  }*/
+  .cardsize{
+    width: 31% !important;
+    margin: 1%;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+  .charset{
+    width: 25;
+  }
+  .cardsize{
+    width: 48% !important;
+    margin: 1%;
+  }
+
 }
