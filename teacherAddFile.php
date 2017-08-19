@@ -41,6 +41,7 @@ $servername = "localhost";
         else {
           $sourcePath = $_FILES['file']['tmp_name'];
           $targetPath = $location . $_FILES['file']['name'];
+
           move_uploaded_file($sourcePath,$targetPath) ;
           $addFileToDB = "INSERT INTO files VALUES (DEFAULT, '$fileName', '$file_extension', '$targetPath', $subjectid)";
           $conn->query($addFileToDB);

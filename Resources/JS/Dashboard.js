@@ -24,7 +24,7 @@ $(document).ready(function(){
       $(".cardsubject" + i).append(json[i+1].subjectname);
       $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
       $(".cardsem" + i).append(json[i+1].subjectsem);
-      $("#card" + i).append('<p class="cardid' + i +' cardid"/>');
+      $("#card" + i).append('<h2 class="cardid' + i +' cardid"/>');
       $(".cardid" + i).append(json[i+1].subjectid);
 
       // $('#card' + i).mouseover(function(){
@@ -56,7 +56,7 @@ $(document).ready(function(){
 
     $('.cardee').click(function(event) {
         var status = $(this).attr('id');
-        var cardsubid = $("#" + status +" p").text();
+        var cardsubid = $("#" + status +" h2").text();
         console.log(cardsubid);
 
         $.ajax({
@@ -66,7 +66,7 @@ $(document).ready(function(){
           datatype:'json',
           encode: true
         }).done(function(location){
-          console.log("done with p")
+          console.log("done with h2")
         });
 
     });
