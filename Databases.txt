@@ -6,3 +6,6 @@ create teacher_signup table -
 
 create subject table -
   CREATE TABLE subject ( SubjectID int NOT NULL AUTO_INCREMENT, SubjectName VARCHAR(255), SubjectCourse VARCHAR(255), SubjectSem int, TeacherID int,  TeacherClgCode VARCHAR(255), Location VARCHAR(255), PRIMARY KEY (SubjectID), FOREIGN KEY (TeacherID) REFERENCES teacher_signup(ID));
+
+create files table - 
+  CREATE TABLE files ( FileID int NOT NULL AUTO_INCREMENT, FileName VARCHAR(255), FileType VARCHAR(8), FileLocation VARCHAR(255), SubjectID int, PRIMARY KEY(FileID), FOREIGN KEY (SUbjectID) REFERENCES subject(SubjectID));

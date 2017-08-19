@@ -1,7 +1,6 @@
 <?php
 $subjectid = $_POST['cardsubid'];
 
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -22,6 +21,7 @@ $location = $row['Location'];
 
 session_start();
 $_SESSION['loacation'] = $location;
-
+$_SESSION['subjectid'] = $subjectid;
+$conn->close(); 
 echo  json_encode($location);
  ?>

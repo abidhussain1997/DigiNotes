@@ -1,12 +1,25 @@
 <?php
 session_start();
 $subjectlocation = $_SESSION['loacation'];
+$subjectid = $_SESSION['subjectid'];
+
 $subjectlocation = $subjectlocation . "/";
 $location = stripslashes($subjectlocation);
 $target_path = $location . basename( $_FILES['file']['name']);
+$fileName = basename( $_FILES['file']['name']);
 $already_exists = false;
 $error = false;
 $invalid_file = false;
+
+$servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbName = "diginotes";
+
+ $conn = new mysqli($servername, $username, $password, $dbName);
+ if (!$conn) {
+     die("Connection Failed: " . mysql_error());
+ }
 
   if (isset($_FILES["file"]["type"])) {
     $validextensions = array("pdf", "doc", "docx");
@@ -29,6 +42,8 @@ $invalid_file = false;
           $sourcePath = $_FILES['file']['tmp_name'];
           $targetPath = $location . $_FILES['file']['name'];
           move_uploaded_file($sourcePath,$targetPath) ;
+          $addFileToDB = "INSERT INTO files VALUES (DEFAULT, '$fileName', '$file_extension', '$targetPath', $subjectid)";
+          $conn->query($addFileToDB);
         }
       }
     }
