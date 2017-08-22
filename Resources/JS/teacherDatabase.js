@@ -11,7 +11,7 @@ $(document).ready(function() {
     };
     $.ajax({
       type: 'POST',
-      url: 'teacherSignupDatabase.php', //http://192.168.1.8:8082/
+      url: 'API/teacherSignupDatabase.php', //http://192.168.1.8:8082/
       data: FormData,
       datatype: 'json',
       encode: true
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: 'teacherSigninDatabase.php',
+      url: 'API/teacherSigninDatabase.php',
       data: FormData,
       datatype: 'json',
       encode: true

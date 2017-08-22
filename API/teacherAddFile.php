@@ -2,7 +2,6 @@
 session_start();
 $subjectlocation = $_SESSION['loacation'];
 $subjectid = $_SESSION['subjectid'];
-
 $subjectlocation = $subjectlocation . "/";
 $location = stripslashes($subjectlocation);
 $target_path = $location . basename( $_FILES['file']['name']);
@@ -22,11 +21,15 @@ $servername = "localhost";
  }
 
   if (isset($_FILES["file"]["type"])) {
-    $validextensions = array("pdf", "doc", "docx");
+    $validextensions = array("pdf", "doc", "docx", "ppt");
     $temporary = explode(".", $_FILES["file"]["name"]);
     $file_extension = end($temporary);
 
-    if ((($_FILES["file"]["type"] == "application/pdf") || ($_FILES["file"]["type"] == "application/msword")) || ($_FILES["file"]["type"] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document") && in_array($file_extension, $validextensions)) {
+
+    if ((($_FILES["file"]["type"] == "application/pdf") || ($_FILES["file"]["type"] == "application/msword"))
+    || ($_FILES["file"]["type"] == "application/mspowerpoint") || ($_FILES["file"]["type"] == "application/powerpoint") || ($_FILES["file"]["type"] == "application/vnd.ms-powerpoint")
+    || ($_FILES["file"]["type"] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    && in_array($file_extension, $validextensions)) {
       if ($_FILES["file"]["error"] > 0)
       {
         $error = true;

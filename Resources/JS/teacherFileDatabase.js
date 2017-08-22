@@ -4,7 +4,7 @@ $(document).ready(function(e) {
     $("#message").empty();
     $('#loading').show();
     $.ajax({
-      url: "teacherAddFile.php",
+      url: "API/teacherAddFile.php",
       type: "POST",
       data: new FormData(this),
       contentType: false, // The content type used when sending data to the server.
