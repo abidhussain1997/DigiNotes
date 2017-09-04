@@ -27,7 +27,8 @@ while ($row = mysqli_fetch_assoc($cardresult)) {
                         "subjectsem"=>$row[SubjectSem],
                       "subjectid"=>$row[SubjectID]);
 }
-  
+
 
   $arrmerg = array_merge($numArray, $cardData);
 echo json_encode($arrmerg);
+?>

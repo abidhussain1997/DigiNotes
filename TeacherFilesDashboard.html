@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:#f5f5f5;">
 
   <nav class="navbar">
     <div class="container-fluid">
@@ -33,16 +33,33 @@
     </div>
   </nav>
 
+<div class="container-fluid">
 
-  <div class="col-xs-12">
-    <form class="fileform" method="post" id="uploadfile" enctype="multipart/form-data">
-      <input type="file" name="file" id="file" required />
-      <input type="submit" value="Upload" class="submit" />
-    </form>
+    <div class="col-xs-12">
+      <form class="fileform" method="post" id="uploadfile" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" required />
+        <input type="submit" value="Upload" class="submit" />
+      </form>
+    </div>
+    <h4 id='loading'>loading..</h4>
+    <div id="message"></div>
+
+</div>
+
+  <div class="container-fluid">
+    <div class="container">
+      <div id="fileCardContainer">
+        <div class="row filecardrow">
+          <!-- <div class="filecard">
+
+          </div> -->
+        </div>
+      </div>
+    </div>
   </div>
-  <h4 id='loading'>loading..</h4>
-  <div id="message"></div>
 </body>
+
+
 
 <script src="Resources/JS/teacherFileDatabase.js"></script>
 

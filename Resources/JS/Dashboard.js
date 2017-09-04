@@ -11,7 +11,7 @@ $(document).ready(function(){
     console.log(json[1].subjectname);
     //[5,{"subjectname":"GGG"},{"subjectname":"OR"},{"subjectname":"SAM"},{"subjectname":"ABID"},{"subjectname":"ERR"}]
     for(i = 0; i < json[0]; i++) {
-      $('.row').append(' <a href="TeacherFilesDashboard.html" <div id="card'+ i +'" class="cardee col-xs-3 cardsize" />'); //<a href="login.html"
+      $('.subjectcard').append(' <a href="TeacherFilesDashboard.html" <div id="card'+ i +'" class="cardee col-xs-3 cardsize" />'); //<a href="login.html"
       $("#card" + i).append('<h3 class="cardcourse' + i +' cardcourse col-xs-9"/>');
       $(".cardcourse" + i).append(json[i+1].subjectcourse);
       $("#card" + i).append('<h3 id="cardoption' + i +'" class="cardoption col-xs-3"/>');
