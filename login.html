@@ -26,6 +26,11 @@
                   <img id="profile-img" class="profile-img-card" src="Resources/Media/avatar1.png" />
 
                   <h2>LOGIN as student</h2>
+                  <div class="errordiv1">
+                    <div class="container">
+                      <h5 class="studenterrormessage">The email or password you entered is invalid</h5>
+                    </div>
+                  </div>
                   <div class="form-group">
                     <input type="text" name="student-username" id="student-username" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
@@ -33,7 +38,7 @@
                     <input type="password" name="student-password" id="student-password" tabindex="2" class="form-control" placeholder="Password">
                   </div>
                   <div class="col-xs-6 form-group pull-left checkbox">
-                    <input type="submit" name="student-signup-btn" id="student-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
+                    <input type="submit" name="student-signup-btn" formaction="StudentSignup.html" id="student-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
                   </div>
                   <div class="col-xs-6 form-group pull-right">
                     <input type="submit" name="student-login-btn" id="student-login-btn" tabindex="4" class="form-control btn btn-login" value="Log In">
@@ -108,6 +113,7 @@
       }
     </style>
     <script src="Resources/JS/teacherDatabase.js"></script>
+    <script src="Resources/JS/StudentDatabase.js">  </script>
 </body>
 
 </html>

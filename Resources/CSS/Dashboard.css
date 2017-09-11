@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #29B6F6;
+  background-color: #4386fc;
   border-radius: 0px !important;
 }
 
@@ -186,7 +186,7 @@ a.logoutbtn:hover {
   border-top-right-radius: 35px;
 }
 
-.filecard:hover {
+.filecard:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border-top-right-radius: 7px;
 }

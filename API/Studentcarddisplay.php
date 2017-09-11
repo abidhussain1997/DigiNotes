@@ -1,9 +1,11 @@
 <?php
 session_start();
-$userloginid = $_SESSION['userloginid'];
-$userloginname = $_SESSION['userloginname'];
-$userloginemail = $_SESSION['userloginemail'];
-$userlogincollegecode = $_SESSION['userlogincollegecode'];
+$stuloginid = $_SESSION['stuloginid'];
+$stuloginname = $_SESSION['stuloginname'];
+$stuloginemail = $_SESSION['stuloginemail'];
+$stulogincollegecode = $_SESSION['stulogincollegecode'];
+$stucourse = $_SESSION['stuloginsubcourse'];
+$stusem = $_SESSION['stuloginsubsem'];
 
 $servername = "localhost";
 $username = "root";
@@ -12,7 +14,7 @@ $dbName = "diginotes";
 
 $conn = new mysqli($servername, $username, $password, $dbName);
 
-$card = "SELECT * FROM subject WHERE TeacherID=$userloginid and TeacherClgCode='$userlogincollegecode'";
+$card = "SELECT * FROM subject WHERE  TeacherClgCode='$stulogincollegecode'AND SubjectCourse='$stucourse' AND SubjectSem='$stusem'  ";
 $cardresult = $conn->query($card);
 $num = $cardresult->num_rows;
 if (!$conn) {
@@ -31,4 +33,3 @@ while ($row = mysqli_fetch_assoc($cardresult)) {
 
   $arrmerg = array_merge($numArray, $cardData);
 echo json_encode($arrmerg);
-?>
