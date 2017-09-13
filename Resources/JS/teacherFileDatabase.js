@@ -12,6 +12,14 @@ $(document).ready(function() {
 
     for (var i = 0; i < json[0]; i++) {
       $('.filecardrow').append('<div id="filecard'+ i +'" class="filecard col-xs-3 filecardsize" />')
+      $('#filecard' + i).append('<div id="filecardbanner' + i + '" class="filecardbanner" />')
+      if(json[i+1].fileType == "pdf"){
+        $('#filecardbanner' + i).css('background-color','#DF4430');
+      } else if (json[i+1].fileType == "ppt") {
+        $('#filecardbanner' + i).css('background-color','#FF7300');
+      } else if (json[i+1].fileType == "doc") {
+        $('#filecardbanner' + i).css('background-color','#3980FB');
+      }
       $("#filecard" + i).append('<h5 class="filenamecard' + i +' filenamecard"/>');
       $(".filenamecard" + i).append(json[i+1].fileName);
       $("#filecard" + i).append('<h3 class="fileid' + i +' fileid"/>');

@@ -26,8 +26,6 @@ if ($result->num_rows > 0) {
         $collagecode = $row['collegecode'];
         $stucourse = $row['stucourse'];
         $stusem = $row['stusem'];
-
-        echo $stuid;
         //Start your session
         session_start();
         //Store the name in the session

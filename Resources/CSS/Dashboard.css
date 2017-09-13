@@ -200,6 +200,13 @@ a.logoutbtn:hover {
   display: none;
 }
 
+.filecardbanner{
+  height: 40px;
+  /*width: 100%;*/
+  border-top-right-radius: inherit;
+  background-color: red;
+}
+
 @media screen and (max-width: 1200px) {
 
   .filecardsize{
