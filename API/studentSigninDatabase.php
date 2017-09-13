@@ -27,6 +27,7 @@ if ($result->num_rows > 0) {
         $stucourse = $row['stucourse'];
         $stusem = $row['stusem'];
 
+        echo $stuid;
         //Start your session
         session_start();
         //Store the name in the session

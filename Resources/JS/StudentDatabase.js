@@ -1,4 +1,17 @@
 $(document).ready(function() {
+  $.ajax({
+    type: 'POST',
+    url: 'API/StudentCheckSession.php',
+    encode: true
+  }).done(function(flag){
+    if(flag == 1){
+      console.log("session exists");
+      window.location.href = "StudentDashboard.html"
+    } else {
+      console.log("Student session does not exists");
+    }
+  });
+  
   $("#submit").click(function(event) {
     event.preventDefault();
 

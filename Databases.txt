@@ -9,3 +9,6 @@ create subject table -
 
 create files table -
   CREATE TABLE files ( FileID int NOT NULL AUTO_INCREMENT, FileName VARCHAR(255), FileType VARCHAR(8), FileLocation VARCHAR(255), SubjectID int, PRIMARY KEY(FileID));
+
+  create student_signup table -
+   CREATE TABLE student_signup ( ID int AUTO_INCREMENT primary key, name varchar (50), email varchar(50), password varchar(50), collegecode varchar(10), stucourse varchar(25), stusem int);

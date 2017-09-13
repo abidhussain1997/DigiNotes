@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
     $flag = 0;
     $row = mysqli_fetch_assoc($result);
     $id = $row['ID'];
+    $passwd = $row['Password'];
     $name = $row['Name'];
     $email = $row['Email'];
     $collagecode = $row['CollegeCode'];
@@ -31,6 +32,7 @@ if ($result->num_rows > 0) {
     session_start();
     //Store the name in the session
     $_SESSION['userloginid'] = $id;
+    $_SESSION['userpassword'] = $passwd;
     $_SESSION['userloginname'] = $name;
     $_SESSION['userloginemail'] = $email;
     $_SESSION['userlogincollegecode'] = $collagecode;

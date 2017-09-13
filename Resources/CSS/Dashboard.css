@@ -196,6 +196,10 @@ a.logoutbtn:hover {
   margin: 1%;
 }
 
+.fileid{
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
 
   .filecardsize{

@@ -1,6 +1,7 @@
 <?php
 session_start();
 $userloginid = $_SESSION['userloginid'];
+$userloginpassword = $_SESSION['userpassword'];
 $userloginname = $_SESSION['userloginname'];
 $userloginemail = $_SESSION['userloginemail'];
 $userlogincollegecode = $_SESSION['userlogincollegecode'];

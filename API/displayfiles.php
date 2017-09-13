@@ -23,10 +23,10 @@ $filenumArray = array($filenum);
 $filecardData = array();
 
 while ($row = mysqli_fetch_assoc($filecardresult)) {
-    $filecardData[] = array("fileName"=>$row[FileName],
-                        "fileType"=>$row[FileType],
-                        "fileLocation"=>$row[FileLocation],
-                        "fileId"=>$row[FileID]);
+    $filecardData[] = array("fileName"=>$row['FileName'],
+                        "fileType"=>$row['FileType'],
+                        "fileLocation"=>$row['FileLocation'],
+                        "fileId"=>$row['FileID']);
 }
 
 

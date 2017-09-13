@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  
+  $.ajax({
+    type: 'POST',
+    url: 'API/TeacherCheckSession.php',
+    encode: true
+  }).done(function(flag){
+    if(flag == 1){
+      console.log("session exists");
+      window.location.href = "TeacherDashboard.html"
+    } else {
+      console.log("Teacher session does not exists");
+    }
+  });
+  
   $("#submit").click(function(event) {
     event.preventDefault();
 
