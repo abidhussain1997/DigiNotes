@@ -1,4 +1,4 @@
-<?php 
+<?php
 $fileid = $_POST['fileid'];
 // $handle = fopen("DigiNotes\/Data\/abid\/F\/2\/QQ\/bill.pdf, "r");
 $servername = "localhost";
@@ -9,7 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbName);
 if (!$conn) {
     die("Connection Failed: " . mysql_error());
 }
-$getFileLocation = "SELECT * FROM files WHERE FileID = $fileid";
+$getFileLocation = "SELECT * FROM files WHERE FileID = '$fileid'";
 $fileLocationResult = $conn->query($getFileLocation);
 $row = mysqli_fetch_assoc($fileLocationResult);
 $dirFilePath = $row['FileLocation'];

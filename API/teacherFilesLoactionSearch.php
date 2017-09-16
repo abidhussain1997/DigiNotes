@@ -13,15 +13,15 @@ if (!$conn) {
 } else {
 }
 
-$getLocation = "SELECT Location FROM subject WHERE SubjectID = $subjectid";
+$getLocation = "SELECT Location FROM subject WHERE SubjectID ='$subjectid'";
 $LocationResult = $conn->query($getLocation);
 
 $row = mysqli_fetch_assoc($LocationResult);
 $location = $row['Location'];
-
 session_start();
+
 $_SESSION['loacation'] = $location;
 $_SESSION['subjectid'] = $subjectid;
-$conn->close(); 
+$conn->close();
 echo  json_encode($location);
  ?>

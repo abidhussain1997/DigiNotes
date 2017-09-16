@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+session_start();  
 $usersubid = $_SESSION['subjectid'];
 
 $servername = "localhost";
@@ -14,7 +13,7 @@ if (!$conn) {
     die("Connection Failed: " . mysql_error());
 }
 
-$filecard = "SELECT * FROM files WHERE SubjectID = $usersubid";
+$filecard = "SELECT * FROM files WHERE SubjectID = '$usersubid'";
 $filecardresult = $conn->query($filecard);
 $filenum = $filecardresult->num_rows;
 

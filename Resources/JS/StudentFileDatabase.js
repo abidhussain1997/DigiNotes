@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('#filecardbanner' + i).css('background-color','#DF4430');
       } else if (json[i+1].fileType == "ppt") {
         $('#filecardbanner' + i).css('background-color','#FF7300');
-      } else if (json[i+1].fileType == "doc"|| "docx") {
+      } else if (json[i+1].fileType == "docx" || "doc") {
         $('#filecardbanner' + i).css('background-color','#3980FB');
       }
       $("#filecard" + i).append('<h5 class="filenamecard' + i +' filenamecard"/>');
@@ -52,52 +52,7 @@ $(document).ready(function() {
       })
     })
   })
-
-  //
-  // $("#filecard0").click(function(e){
-  //   e.preventDefault();
-  //   console.log("clicked on file");
-  // //   var r = confirm("Are you sure you want to delete?");
-  // // if (r == true) {
-  // //   var status = $(this).attr('id');
-  // //   var carddelid = $("#" + status +" p").text();
-  // //   console.log(carddelid);
-  // //
-  // //   $.ajax({
-  // //     type: 'POST',
-  // //     url: 'API/delsubject.php',
-  // //     data: { carddelid : carddelid },
-  // //     datatype:'json',
-  // //     encode: true
-  // //   }).done(function(){
-  // //     console.log("done")
-  // //   });
-  // // }
-  //
-  // });
-
-  $("#uploadfile").on('submit', (function(e) {
-    e.preventDefault();
-    $("#message").empty();
-    $('#loading').show();
-    $.ajax({
-      url: "API/teacherAddFile.php",
-      type: "POST",
-      data: new FormData(this),
-      contentType: false, // The content type used when sending data to the server.
-      cache: false, // To unable request pages to be cached
-      processData: false, // To send DOMDocument or non processed data file it is set to false
-      success: function(data)
-      {
-        $('#loading').hide();
-        $("#message").html(data);
-        setTimeout(function(){
-          location.reload();
-        },1500);
-      }
-    });
-  }));
-
+});
   $('.logoutbtn').click(function(){
     $.ajax({
       type: 'POST',
@@ -107,5 +62,3 @@ $(document).ready(function() {
       window.location.href = "index.html"
     });
   });
-
-});

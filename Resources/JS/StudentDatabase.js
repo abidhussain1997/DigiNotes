@@ -11,7 +11,7 @@ $(document).ready(function() {
       console.log("Student session does not exists");
     }
   });
-  
+
   $("#submit").click(function(event) {
     event.preventDefault();
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
   if((isset($_SESSION['userloginid']) )) {
     // echo "seesion exists";
@@ -8,6 +8,6 @@
   } else {
     $flag = 0;
   }
-  
+
 echo json_encode($flag);
  ?>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="utf-8">
 <meta charset="utf-8">
@@ -18,8 +17,18 @@
     <h1>How does it work</h1>
     <img src="../Resources/Media/howto.png"  width="100%"alt="">
     </div>
-<?php
-header("Refresh:3; url=../StudentDashboard.html"); ?>
+<?php session_start();
+      // redirect to signup page
+      header("Refresh:3; url=../StudentDashboard.html");
+ ?>
+ <style media="screen">
+   h1{
+     text-align: center;
+     font-size: 100px;
+     
+   }
+ </style>
   </div>
+
 </body>
 </html>
