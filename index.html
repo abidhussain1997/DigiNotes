@@ -1,123 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Diginote</title>
-  <link rel="stylesheet" href="Resources/CSS/login.css">
+  <title>Diginote | Notes sharing system</title>
+  <link rel="stylesheet" href="Resources/CSS/home.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<body>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<body style="background-color:#f5f5f5;">
-  <div class="container">
+  <nav class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-    
-        <div class="panel panel-login">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-12">
-                <form id="login-form" action="#" method="post" role="form" style="display: block;">
-                  <img id="profile-img" class="profile-img-card" src="Resources/Media/avatar1.png" />
+        <a class="navbar-brand" href="#head"><img src="Resources/Media/logo.png" height="35px" width="150px"></a>
 
-                  <h2>LOGIN as student</h2>
-                  <div class="errordiv1">
-                    <div class="container">
-                      <h5 class="studenterrormessage">The email or password you entered is invalid</h5>
-                    </div>
-                  </div>
+    </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right ">
+          <li><a href="#about">Services</a></li>
+          <li><a href="#services">How?</a></li>
+          <li><a href="#team">OUR Team</a></li>
+          <li class="reg"><a href="login.html">REGISTER</a></li>
 
-                  <div class="form-group">
-                    <input type="text" name="student-username" id="student-username" tabindex="1" class="form-control" placeholder="Email" value="">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" name="student-password" id="student-password" tabindex="2" class="form-control" placeholder="Password">
-                  </div>
-                  <div class="col-xs-6 form-group pull-left checkbox">
-                    <input type="submit" name="student-signup-btn" formaction="StudentSignup.html" id="student-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
-                  </div>
-                  <div class="col-xs-6 form-group pull-right">
-                    <input type="submit" name="student-login-btn" id="student-login-btn" tabindex="4" class="form-control btn btn-login" value="Log In">
-                  </div>
-                </form>
-
-                <form id="register-form" method="post" role="form" style="display: none;">
-                  <img id="profile-img" class="profile-img-card" src="Resources/Media/avatar2.png" />
-
-                  <h2>LOGIN as Teacher</h2>
-                  <div class="errordiv">
-                    <div class="container">
-                      <h5 class="teachererrormessage">The email or password you entered is invalid</h5>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="teacher-username" id="teacher-username" tabindex="1" class="form-control" placeholder="Email" value="">
-                  </div>
-
-                  <div class="form-group">
-                    <input type="password" name="teacher-password" id="teacher-password" tabindex="2" class="form-control" placeholder="Password">
-                  </div>
-                  <div class="col-xs-6 form-group pull-left checkbox">
-                    <input type="submit" formaction="TeacherSignup.html" name="teacher-signup-btn" id="teacher-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
-                  </div>
-                  <div class="col-xs-6 form-group pull-right">
-                    <input type="submit" name="teacher-login-btn" id="teacher-login-btn" tabindex="4" class="form-control btn btn-login" value="Log In">
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-6 tabs">
-                <a href="#" class="active" id="student-form">
-                  <div class="login">STUDENT LOGIN</div>
-                </a>
-              </div>
-              <div class="col-xs-6 tabs">
-                <a href="#" id="teacher-form">
-                  <div class="register">TEACHER LOGIN</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </ul>
       </div>
     </div>
-    <script type="text/javascript">
-      $(function() {
-        $('#student-form').click(function(e) {
-          $("#login-form").delay(200).fadeIn(200);
-          $("#register-form").fadeOut(200);
-          $('#teacher-form').removeClass('active');
-          $(this).addClass('active');
-          e.preventDefault();
-        });
-        $('#teacher-form').click(function(e) {
-          $("#register-form").delay(200).fadeIn(200);
-          $("#login-form").fadeOut(200);
-          $('#student-form').removeClass('active');
-          $(this).addClass('active');
-          e.preventDefault();
-        });
+  </nav>
+<div class="jumbotron text-center bgimg-1" id="head">
+  <div class="header">
+  <img src="Resources/Media/mainlogo.png"  height="300" class="mainlogo">
+  <h1>DigiNotes</h1>
+          <a href="#about"><i class="fa fa-chevron-circle-down fa-3x" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+<div class="container-fluid text-center why" id="about" >
+  <h2>Why DigiNotes?</h2>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4 " >
+      <span> <img src="http://www.alvarezporter.com/wp-content/uploads/collab-300x246.png" width="200" height="150"  ></span>
+      <h4>Collaborate</h4>
+      <p>Teachers can share files,</br>Student can either download or read them online.</p>
+    </div>
+    <div class="col-sm-4">
+      <span> <img src="http://taticweb.com/wp-content/uploads/2015/04/responsive-devices.png" width="200" height="150"  ></span>
+      <h4>Access from anywhere</h4>
+      <p>It's easy to pull up your content from anywhere, Diginotes works on any device or platform</p>
+    </div>
+    <div class="col-sm-4">
+      <span> <img src="https://www.switchboardfree.co.uk/images/icons/free.png" width="200" height="150"  ></span>
+      <h4>It's free</h4>
+      <p>Uploading, syncing, sharing — it’s all completely free.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bgimg-2">
+</div>
+
+<div id="services" class="container-fluid text-center" style="margin-bottom:50px;">
+  <h2>How does it work</h2>
+  <br>
+  <div class="row slideanim ">
+    <div class="col-md-6" >
+      <div  class="embed-responsive embed-responsive-16by9 vid">
+      <video class="videoo" controls>
+           <source src="Resources/Media/final.webm" type="video/mp4" >
+       </video>
+     </div>
+    </div>
+    <div class="col-md-6">
+<h4>The features shown in this video are only available in Teacher's module.</br>Student module does not have any option to add or delete a folder or file.</h4>
+    </div>
+</div>
+</div>
+
+<div class="bgimg-3">
+</div>
+
+  <div id="team" class="container-fluid" style="margin-bottom:50px;">
+    <h2 class="hea"> Our Team</h2>
+    <div class="row slideanim">
+    <div class="column">
+      <div class="card">
+    <img src="Resources/Media/abid.jpg" alt="John" style="width:100%">
+    <h1>Abid Hussain</h1>
+  </br>
+    </br>
+    <p class="title">Contribution in DigiNotes:</p>
+    <p>Lead Backend Developer</p>
+    <span><p>AND</p></span>
+        <p>Teacher Module (frontend and backend)</p>
+    <div style="margin: 24px 0;" class="team">
+      <a href="https://www.facebook.com/messageatabid" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/abidhussain5030" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/abidoninsta/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.snapchat.com/add/abid.umatiya" target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
+   </div>
+ </br>
+  </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+  <img src="Resources/Media/sam.jpg" alt="John" style="width:100%">
+  <h1>Mohammed Sameer</h1>
+  <p class="title">Contribution in DigiNotes:</p>
+  <p>Frontend designer & Developer</p>
+  <span><p>AND</p></span>
+  <p>Student Module (backend)</p>
+  <div style="margin: 24px 0;" class="team">
+    <a href="https://www.facebook.com/Justsamhere" target="_blank" ><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/sam5325" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.instagram.com/sameer_stark/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.snapchat.com/add/sameer_stark" target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
+ </div>
+ </br>
+</div>
+    </div>
+    <div class="column">
+      <div class="card">
+    <img src="Resources/Media/dan.jfif" alt="John" style="width:100%">
+    <h1>Mohammed Daniyal</h1>
+    <p class="title">Contribution in DigiNotes:</p>
+    <p>Validation & Testing</p>
+    <span><p>AND</p></span>
+    <p>Documentation</p>
+    <div style="margin: 24px 0;" class="team">
+      <a href="https://www.facebook.com/mohammeddaniyal.ebrahim" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/daniyalebrahim/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+   </div>
+ </br>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">Thank you !</span>
+  </div>
+</div>
+<script>
+$(window).scroll(function () {
+if ($(window).scrollTop() >= 50) {
+$('.navbar').css('background','#fff');
+$(".reg").animate({left: '20px'});
+$('.reg').css('background','#4386fc');
+$('.reg a').css('color','#fff');
+}
+});
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage'], .jumbotron a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
       });
-    </script>
+    } // End if
+  });
 
-    <style >
-      .btn {
-        background-color: #E8E9EC;
-      }
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
 
-    </style>
-    <script src="Resources/JS/teacherDatabase.js"></script>
-    <script src="Resources/JS/StudentDatabase.js">  </script>
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+</script>
+<script src="Resources/JS/teacherDatabase.js"></script>
+<script src="Resources/JS/StudentDatabase.js">  </script>
 </body>
-
 </html>

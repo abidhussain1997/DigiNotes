@@ -112,8 +112,9 @@ $(document).ready(function() {
           encode: true
         }).done(function(){
           setTimeout(function() {
-         window.location.href = "index.html";
+         window.location.href = "login.html";
        }, 6000);
+
         });
 
 $('.errorsem').css('display', 'inline-block');
@@ -122,4 +123,5 @@ $('.errorsem').css('display', 'inline-block');
       }
     })
   });
+
 });

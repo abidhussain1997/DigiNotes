@@ -21,7 +21,7 @@ $servername = "localhost";
  }
 
   if (isset($_FILES["file"]["type"])) {
-    $validextensions = array("pdf", "doc", "docx", "ppt");
+    $validextensions = array("pdf", "doc", "docx", "ppt","pptx");
     $temporary = explode(".", $_FILES["file"]["name"]);
     $file_extension = end($temporary);
 

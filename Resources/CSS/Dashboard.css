@@ -172,13 +172,14 @@ a.logoutbtn:hover {
 
 .dropdown-submenu .dropdown-menu {
     top: 0 !important;
-    right: 100% !important;
+  right: 100% !important;
     margin-top: -1px !important;
 }
 .but{
-  margin-top: 0% !important;
+  margin-top: 6% !important;
   background-color:#4386fc !important;
     border-color: #4386fc !important;
+
 }
 .glyphicon-cog{
   color:#fff;
@@ -189,7 +190,9 @@ a.logoutbtn:hover {
     font-size: 20px;
     text-align: center;
 }
-
+.dropdown-menu{
+  right: 0% !important;
+}
 .errorsem{
   background-color: #81C784 !important;
   width: 80% !important;
