@@ -54,7 +54,7 @@ $servername = "localhost";
     else
     {
       $invalid_file = true;
-      echo "<span id='invalid'>***Invalid file Size or Type***<span>";
+      echo "<span id='invalid'>***Invalid file Type***<span>";
     }
 }
 

@@ -20,13 +20,44 @@ $(document).ready(function() {
       } else if (json[i+1].fileType == "doc"|| "docx") {
         $('#filecardbanner' + i).css('background-color','#3980FB');
       }
-      $("#filecard" + i).append('<h5 class="filenamecard' + i +' filenamecard"/>');
-      $(".filenamecard" + i).append(json[i+1].fileName);
-      $("#filecard" + i).append('<h3 class="fileid' + i +' fileid"/>');
+      $("#filecardbanner" + i).append('<h5 id="fileoption' + i +'" class="fileoption col-xs-3 pull-right"/>');
+      $('#fileoption' + i).append("x");
+      $("#fileoption" + i).append('<p class="filedelid' + i +' filedelid"/>');
+      $(".filedelid" + i).append(json[i+1].fileId);
+      $("#filecard" + i).append('<h5 id="filenamecard' + i +'" class="filenamecard"/>');
+      $("#filenamecard" + i).append(json[i+1].fileName);
+      $("#filenamecard" + i).append('<h3 class="fileid' + i +' fileid"/>');
       $(".fileid" + i).append(json[i+1].fileId);
+      var width = $(".filecard").width();
+      $('#filecardbanner' + i).height(width * 25 / 100);
+      $('#filenamecard' + i).height(width * 75 / 100)
     }
 
-    $(".filecard").click(function(){
+    $(".fileoption").click(function(e){
+      e.preventDefault();
+
+      var r = confirm("Are you sure you want to delete?");
+    if (r == true) {
+      var status = $(this).attr('id');
+      console.log(status);
+      var filedelid = $("#" + status +" p").text();
+      console.log(filedelid);
+      
+      $.ajax({
+        type: 'POST',
+        url: 'API/delfile.php',
+        data: { filedelid : filedelid },
+        datatype:'json',
+        encode: true
+      }).done(function(){
+        console.log("file delete operation")
+        location.reload().delay(2000);
+      });
+      
+    }
+    })
+
+    $(".filenamecard").click(function(){
       console.log("here");
       var status = $(this).attr('id');
       console.log(status);

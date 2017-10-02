@@ -241,11 +241,29 @@ a.logoutbtn:hover {
   display: none;
 }
 
+.filedelid{
+  display: none;
+}
+
 .filecardbanner{
   height: 40px;
   /*width: 100%;*/
   border-top-right-radius: inherit;
   background-color: red;
+}
+
+.filenamecard{
+  margin-bottom: 0px;
+}
+
+.fileoption{
+  font-size: 1.5em;
+  color: #ffffff;
+  text-align: center;
+  margin: 0px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  /*display: none;*/
 }
 
 @media screen and (max-width: 1200px) {
