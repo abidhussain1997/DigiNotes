@@ -40,14 +40,6 @@ if ($result->num_rows > 0) {
     $flag = 1;
 }
 
-if(!isset($_SESSION['stuloginemail'])){
-    $_SESSION['stuloginemail'] = 1;
-    $bool = 0;
-}elseif($_SESSION['stuloginemail'] >= 1){
-  $bool = 1;
-}
-
-
 
 echo json_encode($flag);
 $conn->close();
