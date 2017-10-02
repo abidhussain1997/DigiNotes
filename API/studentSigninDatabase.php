@@ -2,7 +2,6 @@
 $student_username = $_POST['student_username'];
 $student_password = $_POST['student_password'];
 $flag = 0;
-$bool=0;
 
 $servername = "localhost";
 $username = "root";
@@ -41,15 +40,6 @@ if ($result->num_rows > 0) {
     $flag = 1;
 }
 
-if(!isset($_SESSION['stuloginemail'])){
-    $_SESSION['stuloginemail'] = 1;
-    $bool = 0;
-}elseif($_SESSION['stuloginemail'] >= 1){
-  $bool = 1;
-}
-
-
 
 echo json_encode($flag);
-echo json_encode($bool);
 $conn->close();
