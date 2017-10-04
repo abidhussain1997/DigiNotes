@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diginote</title>
+  <link rel="stylesheet" href="Resources/CSS/login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:#f5f5f5;">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <div class="panel panel-login">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                  <img id="profile-img" class="profile-img-card" src="Resources/Media/avatar1.png" />
+
+                  <h2>LOGIN as student</h2>
+                  <div class="errordiv1">
+                    <div class="container">
+                      <h5 class="studenterrormessage">The email or password you entered is invalid</h5>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" name="student-username" id="student-username" tabindex="1" class="form-control" placeholder="Email" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="student-password" id="student-password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="col-xs-6 form-group pull-left checkbox">
+                    <input type="submit" name="student-signup-btn" formaction="StudentSignup.html" id="student-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
+                  </div>
+                  <div class="col-xs-6 form-group pull-right">
+                    <input type="submit" name="student-login-btn" id="student-login-btn" tabindex="4" class="form-control btn btn-login" value="Log In">
+                  </div>
+                </form>
+
+                <form id="register-form" method="post" role="form" style="display: none;">
+                  <img id="profile-img" class="profile-img-card" src="Resources/Media/avatar2.png" />
+
+                  <h2>LOGIN as Teacher</h2>
+                  <div class="errordiv">
+                    <div class="container">
+                      <h5 class="teachererrormessage">The email or password you entered is invalid</h5>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="teacher-username" id="teacher-username" tabindex="1" class="form-control" placeholder="Email" value="">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" name="teacher-password" id="teacher-password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="col-xs-6 form-group pull-left checkbox">
+                    <input type="submit" formaction="TeacherSignup.html" name="teacher-signup-btn" id="teacher-signup-btn" tabindex="3" class="form-control btn btn-signup" value="sign up">
+                  </div>
+                  <div class="col-xs-6 form-group pull-right">
+                    <input type="submit" name="teacher-login-btn" id="teacher-login-btn" tabindex="4" class="form-control btn btn-login" value="Log In">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6 tabs">
+                <a href="#" class="active" id="student-form">
+                  <div class="login">STUDENT LOGIN</div>
+                </a>
+              </div>
+              <div class="col-xs-6 tabs">
+                <a href="#" id="teacher-form">
+                  <div class="register">TEACHER LOGIN</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function() {
+        $('#student-form').click(function(e) {
+          $("#login-form").delay(200).fadeIn(200);
+          $("#register-form").fadeOut(200);
+          $('#teacher-form').removeClass('active');
+          $(this).addClass('active');
+          e.preventDefault();
+        });
+        $('#teacher-form').click(function(e) {
+          $("#register-form").delay(200).fadeIn(200);
+          $("#login-form").fadeOut(200);
+          $('#student-form').removeClass('active');
+          $(this).addClass('active');
+          e.preventDefault();
+        });
+      });
+    </script>
+
+    <style >
+      .btn {
+        background-color: #E8E9EC;
+      }
+
+    </style>
+    <script src="Resources/JS/teacherDatabase.js"></script>
+    <script src="Resources/JS/StudentDatabase.js">  </script>
+</body>
+
+</html>

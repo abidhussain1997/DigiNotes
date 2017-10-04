@@ -1,0 +1,184 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.navbar {
+  background-color: transparent;
+  border-radius: 0px !important;
+  margin-bottom: 0px !important;
+}
+.navbar-toggle{
+  background-color: white !important;
+}
+.navbar-toggle .icon-bar{
+  background-color: black !important;
+}
+a{
+  color: black !important;
+  font-weight: bold;
+}
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    visibility: visible;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+.header{
+  background-attachment: fixed;
+}
+.bgimg-1 {
+  background-image: url('../../Resources/Media/header.jpg');
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url('../../Resources/Media/parallax2.jpg');
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url('../../Resources/Media/parallax1.jpg');
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+.container-fluid h2{
+  font-size: 50px;
+}
+.why h4{
+font-size:30px;
+}
+.why p{
+  font-size: 20px;
+}
+.why{
+  margin-bottom: 50px;
+}
+.videoo{
+ border: 1px solid black !important;
+ height: 280px !important;
+ width: 500px !important;
+}
+ #team {
+  box-sizing: border-box !important;
+}
+
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.team a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+.team a:hover {
+    opacity: 0.7;
+}
+
+#team h2{
+  text-align: center !important;
+}
+.hea{
+  margin-bottom: 20px;
+}
+
+.mainlogo{
+  margin-top: 9%;
+}
+
+#head h1{
+  color: black !important;
+}

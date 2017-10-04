@@ -61,7 +61,7 @@ $(document).ready(function() {
         $('.errordiv1').css('display', 'inline-block');
       } else if (flag == 0) {
         $('.errordiv1').css('display', 'none');
-        window.location.href = "./API/howto.php";
+        window.location.href = "./StudentDashboard.html";
       }
     })
 

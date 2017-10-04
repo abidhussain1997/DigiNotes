@@ -40,5 +40,6 @@ if ($result->num_rows > 0) {
     $flag = 1;
 }
 
+
 echo json_encode($flag);
 $conn->close();
