@@ -30,6 +30,7 @@ if ($searchresult->num_rows > 0) {
     $sql = "INSERT INTO student_signup VALUES (DEFAULT, '$studentname', '$studentemail', '$studentpassword', '$studentclgcode', '$studentcourse', $studentsem)";
     if ($conn->query($sql) === true) {
         echo "New record created successfully";
+        header('Location: ../login.html');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

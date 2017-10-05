@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   $.ajax({
     type: 'POST',
     url: 'API/TeacherCheckSession.php',
@@ -12,9 +12,47 @@ $(document).ready(function() {
       console.log("Teacher session does not exists");
     }
   });
-  
+
   $("#submit").click(function(event) {
     event.preventDefault();
+
+    if ($('#teachername').val()== 0){
+      $('.errordiv1').css('display', 'inline-block');
+      console.log("empty");
+    } else {
+      $('.errordiv1').css('display', 'none');
+    }
+    if ($('#teacherpassord').val()== 0){
+      $('.errordiv3').css('display', 'inline-block');
+      console.log("empty");
+    } else {
+      $('.errordiv3').css('display', 'none');
+    }
+    if ($('#teacherclgcode').val()== 0){
+      $('.errordiv5').css('display', 'inline-block');
+      console.log("empty");
+    } else {
+      $('.errordiv5').css('display', 'none');
+    }
+    $('#teacheremail').filter(function(){
+                      var emil=$('#teacheremail').val();
+                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+               if( !emailReg.test( emil ) ) {
+                     $('.errordiv2').css('display', 'inline-block');
+                   } else {
+                   $('.errordiv2').css('display', 'none');
+                   }
+                 });
+
+                 var password = $("#teacherpassord").val();
+                             var confirmPassword = $("#teacherconpassord").val();
+                             if (password != confirmPassword) {
+                                 $('.errordiv4').css('display', 'inline-block');
+                                 return false;
+                               }
+                               else {
+                                   $('.errordiv4').css('display', 'none');
+                               }
 
     var FormData = {
       teachername: $('#teachername').val(),

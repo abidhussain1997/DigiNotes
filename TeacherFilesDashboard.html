@@ -34,9 +34,15 @@
 
     <div class="col-xs-12">
       <form class="fileform" method="post" id="uploadfile" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-xs-3">
         <input type="file" name="file" id="file" required />
-        <input type="submit" value="Upload" class="submit" />
+          </div>
+            <div class="col-xs-2">
+        <input type="submit" value="Upload" class="submit btn-primary" />
+      </div>
       </form>
+    </div>
     </div>
     <h4 id='loading'>loading..</h4>
     <div id="message"></div>

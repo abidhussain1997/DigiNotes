@@ -50,7 +50,6 @@ width: 100%;
 text-align: center;
 outline: 0;
 text-transform: uppercase;
-color: #fc80b2;
 font-weight: 600;
 font-size: 13px;
 }
@@ -66,9 +65,6 @@ border:1px solid #f0f0f0;
 border-color: #337AB7;
 }
 
-.main-form {
-color: #337AB7;
-}
 .main-form .btn-submit{
 display: block;
 background: #337AB7 ;
@@ -88,4 +84,13 @@ h1{
   margin-top: -7%;
   margin-bottom: 5%;
   color: #fff;
+}
+
+.errordiv1, .errordiv2,.errordiv3, .errordiv4,.errordiv5, .errordiv6,.errordiv7{
+  display: none;
+}
+
+.studenterrormessage,.teachererrormessage{
+  color: red !important;
+  font-size: 11px;
 }

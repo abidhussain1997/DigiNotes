@@ -23,10 +23,25 @@
                 <div role="tabpanel" class="tab-pane" id="signup">
                   <form method="post">
                     <input class="form-control" type="text" id="teachername" value="" placeholder="Full Name">
+                    <div class="errordiv1">
+                        <h5 class="teachererrormessage">*enter your name</h5>
+                    </div>
                     <input class="form-control" type="email" id="teacheremail" value="" placeholder="Email Address">
+                    <div class="errordiv2">
+                        <h5 class="teachererrormessage">*enter a valid email</h5>
+                    </div>
                     <input class="form-control" type="password" id="teacherpassord" value="" placeholder="Password">
+                    <div class="errordiv3">
+                        <h5 class="teachererrormessage">*enter your password</h5>
+                    </div>
                     <input class="form-control" type="password" id="teacherconpassord" value="" placeholder="Confirm Password">
-                    <input class="form-control" type="text" id="teacherclgcode" value="" placeholder="Colege code">
+                    <div class="errordiv4">
+                        <h5 class="teachererrormessage">*Must be same as password</h5>
+                    </div>
+                    <input class="form-control" type="text" id="teacherclgcode" value="" maxlength="2" placeholder="Colege code">
+                    <div class="errordiv5">
+                        <h5 class="teachererrormessage">*enter your college code</h5>
+                    </div>
                     <input class="btn btn-submit" type="submit" id="submit" value="Sign up">
                   </form>
                 </div>

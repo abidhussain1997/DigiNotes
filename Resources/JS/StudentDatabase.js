@@ -15,6 +15,57 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
+if ($('#studentname').val()== 0){
+  $('.errordiv1').css('display', 'inline-block');
+  console.log("empty");
+} else {
+  $('.errordiv1').css('display', 'none');
+}
+if ($('#studentpassord').val()== 0){
+  $('.errordiv3').css('display', 'inline-block');
+  console.log("empty");
+} else {
+  $('.errordiv3').css('display', 'none');
+}
+if ($('#studentcourse').val()== 0){
+  $('.errordiv5').css('display', 'inline-block');
+  console.log("empty");
+} else {
+  $('.errordiv5').css('display', 'none');
+}
+if ($('#studentsem').val()== 0){
+  $('.errordiv6').css('display', 'inline-block');
+  console.log("empty");
+} else {
+  $('.errordiv6').css('display', 'none');
+}
+if ($('#studentclgcode').val()== 0){
+  $('.errordiv7').css('display', 'inline-block');
+  console.log("empty");
+} else {
+  $('.errordiv7').css('display', 'none');
+}
+
+var password = $("#studentpassord").val();
+            var confirmPassword = $("#studentconpassord").val();
+            if (password != confirmPassword) {
+                $('.errordiv4').css('display', 'inline-block');
+                return false;
+              }
+              else {
+                  $('.errordiv4').css('display', 'none');
+              }
+
+$('#studentemail').filter(function(){
+                  var emil=$('#studentemail').val();
+             var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+           if( !emailReg.test( emil ) ) {
+                 $('.errordiv2').css('display', 'inline-block');
+               } else {
+               $('.errordiv2').css('display', 'none');
+               }
+             });
+
     var FormData = {
       studentname: $('#studentname').val(),
       studentusername: $('#studentusername').val(),
