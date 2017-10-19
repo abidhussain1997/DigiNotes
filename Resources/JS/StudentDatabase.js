@@ -15,35 +15,40 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
-if ($('#studentname').val()== 0){
-  $('.errordiv1').css('display', 'inline-block');
-  console.log("empty");
-} else {
+if  ( $('#studentname').val().match('^[a-zA-Z]{3,16}$') ){
   $('.errordiv1').css('display', 'none');
+  name = true;
+} else {
+  $('.errordiv1').css('display', 'block');
+  name =false;
 }
-if ($('#studentpassord').val()== 0){
+if ($('#studentpassord').val()== 0 || null || undefined){
   $('.errordiv3').css('display', 'inline-block');
-  console.log("empty");
+  passwrd = false;
 } else {
   $('.errordiv3').css('display', 'none');
+  passwrd=true;
 }
-if ($('#studentcourse').val()== 0){
-  $('.errordiv5').css('display', 'inline-block');
-  console.log("empty");
-} else {
+if ($('#studentcourse').val().match('^[a-zA-Z]{3,3}$')){
   $('.errordiv5').css('display', 'none');
-}
-if ($('#studentsem').val()== 0){
-  $('.errordiv6').css('display', 'inline-block');
-  console.log("empty");
+  course = true;
 } else {
-  $('.errordiv6').css('display', 'none');
+  $('.errordiv5').css('display', 'block');
+  course=false;
 }
-if ($('#studentclgcode').val()== 0){
+if ($('#studentsem').val().match(/\(?([1-6]{1})\)?/)){
+  $('.errordiv6').css('display', 'none');
+  sem=true;
+} else {
+  $('.errordiv6').css('display', 'block');
+  sem=false;
+}
+if ($('#studentclgcode').val()== 0 || null){
   $('.errordiv7').css('display', 'inline-block');
-  console.log("empty");
+  clgcode=false;
 } else {
   $('.errordiv7').css('display', 'none');
+  clgcode=true;
 }
 
 var password = $("#studentpassord").val();
@@ -51,9 +56,11 @@ var password = $("#studentpassord").val();
             if (password != confirmPassword) {
                 $('.errordiv4').css('display', 'inline-block');
                 return false;
+                conpassword= false;
               }
               else {
                   $('.errordiv4').css('display', 'none');
+                    conpassword= true;
               }
 
 $('#studentemail').filter(function(){
@@ -61,11 +68,19 @@ $('#studentemail').filter(function(){
              var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
            if( !emailReg.test( emil ) ) {
                  $('.errordiv2').css('display', 'inline-block');
-               } else {
+                 email=false;
+               } else if ($('#studentemail').val()== 0 || undefined || null) {
+                    $('.errordiv2').css('display', 'inline-block');
+                    email=false;
+               }
+                else {
                $('.errordiv2').css('display', 'none');
+               email=true;
+
                }
              });
 
+if (name && email && passwrd && course && sem && conpassword && clgcode == true){
     var FormData = {
       studentname: $('#studentname').val(),
       studentusername: $('#studentusername').val(),
@@ -83,9 +98,15 @@ $('#studentemail').filter(function(){
       datatype: 'json',
       encode: true
     }).done(function() {
-      console.log("done");
+      setTimeout(function() {
+     window.location.href = "login.html";
+   }, 2000);
     })
-
+    $('.alert').css('display', 'block');
+}
+else {
+console.log("error not entered in db");
+}
   });
 });
 

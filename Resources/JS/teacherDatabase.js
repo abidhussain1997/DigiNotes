@@ -16,31 +16,40 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
-    if ($('#teachername').val()== 0){
-      $('.errordiv1').css('display', 'inline-block');
-      console.log("empty");
-    } else {
+    if ($('#teachername').val().match('^[a-zA-Z]{3,16}$')){
       $('.errordiv1').css('display', 'none');
+      name =true;
+    } else {
+      $('.errordiv1').css('display', 'block');
+      name= false;
     }
-    if ($('#teacherpassord').val()== 0){
+    if ($('#teacherpassord').val()== 0 || null || undefined){
       $('.errordiv3').css('display', 'inline-block');
-      console.log("empty");
+      passwrd = false;
     } else {
       $('.errordiv3').css('display', 'none');
+        passwrd = true;
     }
-    if ($('#teacherclgcode').val()== 0){
+    if ($('#teacherclgcode').val()== 0 || null || undefined){
       $('.errordiv5').css('display', 'inline-block');
-      console.log("empty");
+      clgcode= false;
     } else {
       $('.errordiv5').css('display', 'none');
+        clgcode= true;
     }
     $('#teacheremail').filter(function(){
                       var emil=$('#teacheremail').val();
                  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                if( !emailReg.test( emil ) ) {
                      $('.errordiv2').css('display', 'inline-block');
-                   } else {
+                     email= false;
+                   } else if ($('#teacheremail').val()== 0 || null || undefined) {
+                     $('.errordiv2').css('display', 'inline-block');
+                     email=false;
+                   }
+                    else {
                    $('.errordiv2').css('display', 'none');
+                   email= true;
                    }
                  });
 
@@ -49,11 +58,17 @@ $(document).ready(function() {
                              if (password != confirmPassword) {
                                  $('.errordiv4').css('display', 'inline-block');
                                  return false;
+                                 conpassword= false;
+                               } else if ($("#teacherconpassord").val()==0 || null || undefined) {
+                                 $('.errordiv4').css('display', 'inline-block');
+                                  conpassword= false;
                                }
                                else {
                                    $('.errordiv4').css('display', 'none');
+                                   conpassword= true;
                                }
 
+if (name && passwrd && clgcode && email && conpassword == true) {
     var FormData = {
       teachername: $('#teachername').val(),
       teacherusername: $('#teacherusername').val(),
@@ -68,9 +83,15 @@ $(document).ready(function() {
       datatype: 'json',
       encode: true
     }).done(function() {
-      console.log("done");
+      setTimeout(function() {
+     window.location.href = "login.html";
+   }, 2000);
     })
-
+    $('.alert').css('display', 'block');
+}
+else {
+  console.log("error to enter database");
+}
   });
 });
 

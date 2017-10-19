@@ -86,7 +86,7 @@ h1{
   color: #fff;
 }
 
-.errordiv1, .errordiv2,.errordiv3, .errordiv4,.errordiv5, .errordiv6,.errordiv7{
+.errordiv1, .errordiv2,.errordiv3, .errordiv4,.errordiv5, .errordiv6,.errordiv7,.alert{
   display: none;
 }
 

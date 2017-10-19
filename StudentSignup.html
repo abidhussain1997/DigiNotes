@@ -9,6 +9,10 @@
 </head>
 
 <body>
+
+
+
+
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -16,7 +20,8 @@
           <h1> Student Signup</h1>
           <div class="my-form">
             <div class="col-sm-6 no-padding">
-              <!-- <img src="imgcard2.png" style="margin-top:25%"  alt=""> -->
+               <img src="Resources/Media/mainlogo.png" height="250" width="250" style="margin-top:40%; margin-left:20px "  alt="">
+               <h5 style="color:white; margin-left:20px; margin-top:60px">Already have an account? </br></br></br> <span > <a style="color:#fff;" href="login.html">LOGIN</a></span></h5>
             </div>
             <div class="col-sm-6 form-bg">
               <div class="main-form">
@@ -38,7 +43,7 @@
                     <div class="errordiv4">
                         <h5 class="studenterrormessage">* re-enter your password</h5>
                     </div>
-                    <input class="form-control" type="text" id="studentcourse" value="" placeholder="Course">
+                    <input class="form-control" type="text" id="studentcourse" maxlength="3" value="" placeholder="Course">
                     <div class="errordiv5">
                         <h5 class="studenterrormessage">*enter your course</h5>
                     </div>
@@ -51,6 +56,9 @@
                         <h5 class="studenterrormessage">*enter your college code</h5>
                     </div>
                     <input class="btn btn-submit" type="submit" id="submit" value="Sign up">
+                    <div class="alert alert-success">
+                      <strong>Success!</strong> Successfully register.Please LOGIN to continue.
+                    </div>
                   </form>
                 </div>
               </div>
