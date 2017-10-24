@@ -102,20 +102,41 @@ $(document).ready(function() {
 
 
   $("#addsub").click(function(event) {
-    event.preventDefault();
-    if ($('input[type=text]#subname').val() == "") {
-      $('.errfill').css('display', 'block');
-    } else if ($('input[type=text]#course').val() == "") {
-      $('.errfill').css('display', 'block');
-    } else if (!$('input[type=number]#sem').val()) {
-      $('.errfill').css('display', 'block');
-      $('.successsubject').css('display', 'none');
-    } else {
 
+    if  ( $('#subname').val().match('^[a-zA-Z]{1,16}$') ){
+      $('.errordiv1').css('display', 'none');
+      name = true;
+      console.log(name);
+    } else {
+      $('.errordiv1').css('display', 'block');
+      name =false;
+      console.log(name);
+    }
+    if ($('#course').val().match('^[a-zA-Z]{3,10}$')){
+      $('.errordiv2').css('display', 'none');
+      course = true;
+      console.log(course);
+    } else {
+      $('.errordiv2').css('display', 'block');
+      course=false;
+      console.log(course);
+    }
+    if ($('#sem').val().match(/\(?([1-6]{1})\)?/) && $('#sem').val()> 0) {
+      $('.errordiv3').css('display', 'none');
+      sem=true;
+      console.log(sem);
+    } else {
+      $('.errordiv3').css('display', 'block');
+      sem=false;
+      console.log(sem);
+    }
+
+    if (name && course && sem == true) {
+      console.log("reached");
       var FormData = {
         subject_name: $('#subname').val().toUpperCase(),
         subject_course: $('#course').val().toUpperCase(),
-        subject_sem: $('#sem').val().toUpperCase()
+        subject_sem: $('#sem').val().toUpperCase(),
       };
       $.ajax({
         type: 'POST',
@@ -125,20 +146,13 @@ $(document).ready(function() {
         encode: true
       }).done(function() {
         console.log("done");
-        // $('#cardholder').fadeOut(1000).fadeIn(500);
-        // $("#cardholder").load(location.href + "#cardholder");
-        $('input[type=text]#subname').val("");
-        $('input[type=text]#course').val("");
-        $('input[type=number]#sem').val("");
-        $('.errfill').css('display', 'none');
+        console.log(FormData);
         $('.successsubject').css('display', 'block');
-
         setTimeout(function(){
           location.reload();
         },1500);
-
-      })
-    }
+      });
+}
   });
 });
 

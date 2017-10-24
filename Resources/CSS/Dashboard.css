@@ -96,7 +96,7 @@
 
 .glyphicon-log-out {
   font-size: 20px;
-  color: black !important;
+  color: #fff !important;
 }
 
 a.logoutbtn {
@@ -206,6 +206,15 @@ a.logoutbtn:hover {
   color: #f5f5f5 !important;
   font-weight: 300 !important;
   text-align: center!important;
+}
+
+.errordiv1,.errordiv2,.errordiv3{
+  display: none ;
+}
+
+.subjecterrormessage{
+  color: red ;
+  font-weight: 300;
 }
 
 /*---------------------------------------------file DashBoard-----------------------------------------------------------*/

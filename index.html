@@ -32,8 +32,8 @@
         <ul class="nav navbar-nav navbar-right ">
           <li><a href="#about">Services</a></li>
           <li><a href="#services">How?</a></li>
-          <li><a href="#team">OUR Team</a></li>
-          <li class="reg"><a href="login.html">REGISTER</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li class="reg"><a href="login.html">Sign up / Login</a></li>
 
         </ul>
       </div>
@@ -48,7 +48,7 @@
 </div>
 
 <div class="container-fluid text-center why" id="about" >
-  <h2>Why DigiNotes?</h2>
+  <h2 style="padding-top:30px;">Why DigiNotes?</h2>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4 " >
@@ -73,7 +73,7 @@
 </div>
 
 <div id="services" class="container-fluid text-center" style="margin-bottom:50px;">
-  <h2>How does it work</h2>
+  <h2 style="padding-top:30px;">How does it work</h2>
   <br>
   <div class="row slideanim ">
     <div class="col-md-6" >
@@ -93,7 +93,7 @@
 </div>
 
   <div id="team" class="container-fluid" style="margin-bottom:50px;">
-    <h2 class="hea"> Our Team</h2>
+    <h2 class="hea" style="padding-top:30px;"> Our Team</h2>
     <div class="row slideanim">
     <div class="column">
       <div class="card">
@@ -150,21 +150,22 @@
   </div>
 </div>
 
-
-<div class="bgimg-1">
-  <div class="caption">
-    <span class="border">Thank you !</span>
-  </div>
-</div>
 <script>
 $(window).scroll(function () {
 if ($(window).scrollTop() >= 50) {
 $('.navbar').css('background','#fff');
-$(".reg").animate({left: '20px'});
 $('.reg').css('background','#4386fc');
 $('.reg a').css('color','#fff');
 }
+if ($(window).width() <= 768){
+  $(".reg").animate({left: '0px'});
+}
+  else{
+    $(".reg").animate({left: '20px'});
+  }
 });
+
+
 
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
