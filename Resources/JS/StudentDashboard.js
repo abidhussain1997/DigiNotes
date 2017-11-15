@@ -1,51 +1,61 @@
 $(document).ready(function(){
 
+    $.ajax({
+        type: "GET",
+        url: "API/checkSession.php",
+        datatype: 'json',
+        encode: true
+    }).done(function(flag){
+        if (flag == 0) {
+             window.location.href = "index.html"
+        } else {
+            $.ajax({
+              type: "GET",
+              url: "API/Studentcarddisplay.php",
+              datatype: 'json',
+              encode: true
+            }).done(function(num) {
+              console.log(num);
+              var json = JSON.parse(num);
+              console.log(json[1].subjectname);
+              //[5,{"subjectname":"GGG"},{"subjectname":"OR"},{"subjectname":"SAM"},{"subjectname":"ABID"},{"subjectname":"ERR"}]
+              for(i = 0; i < json[0]; i++) {
+                $('.row').append(' <a href="StudentFilesDashboard.html" <div id="card'+ i +'" class="cardee col-xs-3 cardsize" />');
+                $("#card" + i).append('<h3 class="cardcourse' + i +' cardcourse col-xs-9"/>');
+                $(".cardcourse" + i).append(json[i+1].subjectcourse);
+                $("#card" + i).append('<h3 id="cardoption' + i +'" class="cardoption col-xs-3"/>');
 
-  $.ajax({
-    type: "GET",
-    url: "API/Studentcarddisplay.php",
-    datatype: 'json',
-    encode: true
-  }).done(function(num) {
-    console.log(num);
-    var json = JSON.parse(num);
-    console.log(json[1].subjectname);
-    //[5,{"subjectname":"GGG"},{"subjectname":"OR"},{"subjectname":"SAM"},{"subjectname":"ABID"},{"subjectname":"ERR"}]
-    for(i = 0; i < json[0]; i++) {
-      $('.row').append(' <a href="StudentFilesDashboard.html" <div id="card'+ i +'" class="cardee col-xs-3 cardsize" />');
-      $("#card" + i).append('<h3 class="cardcourse' + i +' cardcourse col-xs-9"/>');
-      $(".cardcourse" + i).append(json[i+1].subjectcourse);
-      $("#card" + i).append('<h3 id="cardoption' + i +'" class="cardoption col-xs-3"/>');
+                $("#cardoption" + i).append('<p class="carddelid' + i +' carddelid"/>');
+                $(".carddelid" + i).append(json[i+1].subjectid);
+                $("#card" + i).append('<h5 class="cardsubject' + i +' cardsubject"/>');
+                $(".cardsubject" + i).append(json[i+1].subjectname);
+                $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
+                $(".cardsem" + i).append(json[i+1].subsem);
+                $("#card" + i).append('<h2 class="cardid' + i +' cardid"/>');
+                $(".cardid" + i).append(json[i+1].subjectid);
 
-      $("#cardoption" + i).append('<p class="carddelid' + i +' carddelid"/>');
-      $(".carddelid" + i).append(json[i+1].subjectid);
-      $("#card" + i).append('<h5 class="cardsubject' + i +' cardsubject"/>');
-      $(".cardsubject" + i).append(json[i+1].subjectname);
-      $("#card" + i).append('<h6 class="cardsem' + i +' cardsem"/>');
-      $(".cardsem" + i).append(json[i+1].subsem);
-      $("#card" + i).append('<h2 class="cardid' + i +' cardid"/>');
-      $(".cardid" + i).append(json[i+1].subjectid);
+                $('.cardee').click(function(event) {
+                    var status = $(this).attr('id');
+                    var cardsubid = $("#" + status +" h2").text();
+                    console.log(cardsubid);
 
-      $('.cardee').click(function(event) {
-          var status = $(this).attr('id');
-          var cardsubid = $("#" + status +" h2").text();
-          console.log(cardsubid);
+                    $.ajax({
+                      type: 'POST',
+                      url: 'API/teacherFilesLoactionSearch.php',
+                      data: { cardsubid : cardsubid },
+                      datatype:'json',
+                      encode: true
+                    }).done(function(location){
+                      console.log("done with h2")
 
-          $.ajax({
-            type: 'POST',
-            url: 'API/teacherFilesLoactionSearch.php',
-            data: { cardsubid : cardsubid },
-            datatype:'json',
-            encode: true
-          }).done(function(location){
-            console.log("done with h2")
+                    });
 
-          });
+                });
+          }
 
-      });
-}
-
-  })
+            })
+        }
+    });
 });
 
 $(document).ready(function(){

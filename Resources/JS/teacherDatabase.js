@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $.ajax({
     type: 'POST',
-    url: 'API/TeacherCheckSession.php',
+    url: 'API/checkSession.php',
     encode: true
   }).done(function(flag){
     if(flag == 1){

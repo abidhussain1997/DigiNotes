@@ -1,11 +1,11 @@
 $(document).ready(function() {
   $.ajax({
     type: 'POST',
-    url: 'API/StudentCheckSession.php',
+    url: 'API/checkSession.php',
     encode: true
   }).done(function(flag){
-    if(flag == 1){
-      console.log("session exists");
+    if(flag == 2){
+      console.log("Student session found");
       window.location.href = "StudentDashboard.html"
     } else {
       console.log("Student session does not exists");
