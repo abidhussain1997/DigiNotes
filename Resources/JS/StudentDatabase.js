@@ -15,21 +15,21 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
-if  ( $('#studentname').val().match('^[a-zA-Z]{3,16}$') ){
+if  ( $('#studentname').val().match('^[a-zA-Z ]{3,16}$') ){
   $('.errordiv1').css('display', 'none');
   name = true;
 } else {
   $('.errordiv1').css('display', 'block');
   name =false;
 }
-if ($('#studentpassord').val()== 0 || null || undefined){
+if ($('#studentpassord').val()== 0 || null || undefined || $('#studentpassord').val().length < 8){
   $('.errordiv3').css('display', 'inline-block');
   passwrd = false;
 } else {
   $('.errordiv3').css('display', 'none');
   passwrd=true;
 }
-if ($('#studentcourse').val().match('^[a-zA-Z]{3,3}$')){
+if ($('#studentcourse').val().match('^[a-zA-Z]')){
   $('.errordiv5').css('display', 'none');
   course = true;
 } else {

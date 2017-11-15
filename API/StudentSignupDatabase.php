@@ -6,6 +6,7 @@ $studentpassword = $_POST['studentpassword'];
 $studentclgcode = $_POST['studentclgcode'];
 $studentcourse = $_POST['studentcourse'];
 $studentsem = $_POST['studentsem'];
+$studentpassword = sha1($studentpassword);
 
 $servername = "localhost";
 $username = "root";

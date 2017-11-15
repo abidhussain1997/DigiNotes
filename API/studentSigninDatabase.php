@@ -1,6 +1,7 @@
 <?php
 $student_username = $_POST['student_username'];
 $student_password = $_POST['student_password'];
+$student_password = sha1($student_password);
 $flag = 0;
 
 $servername = "localhost";
