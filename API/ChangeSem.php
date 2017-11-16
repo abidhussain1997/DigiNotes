@@ -20,8 +20,7 @@ if (!$conn) {
 $check = "UPDATE student_signup SET stusem='$student_sem' where id='$stuloginid'";
 $result = $conn->query($check);
 
-
-if ($conn->query($check) === true) {
+if ($conn->query($check) === true) { 
     $flag = 1;
 } else {
   $flag = 0;

@@ -21,7 +21,7 @@ $result = $conn->query($check);
 if ($result->num_rows > 0) {
     $flag = 0;
         $row = mysqli_fetch_assoc($result);
-        $stuid = $row['id'];
+        $stuid = $row['ID'];
         $name = $row['name'];
         $email = $row['email'];
         $collagecode = $row['collegecode'];

@@ -89,7 +89,6 @@ if (name && email && passwrd && course && sem && conpassword && clgcode == true)
       studentclgcode: $('#studentclgcode').val(),
       studentcourse: $('#studentcourse').val(),
       studentsem: $('#studentsem').val(),
-
     };
     $.ajax({
       type: 'POST',
@@ -97,12 +96,16 @@ if (name && email && passwrd && course && sem && conpassword && clgcode == true)
       data: FormData,
       datatype: 'json',
       encode: true
-    }).done(function() {
-      setTimeout(function() {
-     window.location.href = "login.html";
-   }, 2000);
+  }).done(function(checkuser) {
+      if (checkuser == 1) {
+          alert("user already exists")
+      } else {
+          $('.alert').css('display', 'block');
+          setTimeout(function() {
+         window.location.href = "login.html";
+       }, 2000); 
+      }
     })
-    $('.alert').css('display', 'block');
 }
 else {
 console.log("error not entered in db");

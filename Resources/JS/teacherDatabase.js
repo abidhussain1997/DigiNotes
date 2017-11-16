@@ -82,12 +82,16 @@ if (name && passwrd && clgcode && email && conpassword == true) {
       data: FormData,
       datatype: 'json',
       encode: true
-    }).done(function() {
-      setTimeout(function() {
-     window.location.href = "login.html";
-   }, 2000);
+  }).done(function(checkuser) {
+      if (checkuser == 1) {
+          alert("user already exists")
+      } else {
+          $('.alert').css('display', 'block');
+          setTimeout(function() {
+         window.location.href = "login.html";
+       }, 2000); 
+      }
     })
-    $('.alert').css('display', 'block');
 }
 else {
   console.log("error to enter database");

@@ -123,7 +123,7 @@ $(document).ready(function() {
         }).done(function(){
           setTimeout(function() {
          window.location.href = "login.html";
-       }, 6000);
+     }, 5000);
 
         });
 
