@@ -15,12 +15,12 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
-if  ( $('#studentname').val().match('^[a-zA-Z ]{3,16}$') ){
+if  ( $('#studentname').val().match("^[a-zA-Z ]+$") ){
   $('.errordiv1').css('display', 'none');
-  name = true;
+  var name = true;
 } else {
   $('.errordiv1').css('display', 'block');
-  name =false;
+  var name =false;
 }
 if ($('#studentpassord').val()== 0 || null || undefined || $('#studentpassord').val().length < 8){
   $('.errordiv3').css('display', 'inline-block');

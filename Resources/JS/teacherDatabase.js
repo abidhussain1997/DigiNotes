@@ -16,12 +16,12 @@ $(document).ready(function() {
   $("#submit").click(function(event) {
     event.preventDefault();
 
-    if ($('#teachername').val().match('^[a-zA-Z ]{3,16}$')){
+    if  ( $('#teachername').val().match("^[a-zA-Z ]+$") ){
       $('.errordiv1').css('display', 'none');
-      name =true;
+      var name = true;
     } else {
       $('.errordiv1').css('display', 'block');
-      name= false;
+      var name =false;
     }
     if ($('#teacherpassord').val()== 0 || null || undefined || $('#teacherpassord').val().length < 8){
       $('.errordiv3').css('display', 'inline-block');

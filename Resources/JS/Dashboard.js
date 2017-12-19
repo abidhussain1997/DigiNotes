@@ -150,7 +150,7 @@ $(document).ready(function() {
       };
       $.ajax({
         type: 'POST',
-        url: 'API/TeacherDashboard.php',
+        url: 'API/TeacherDashboard.html',
         data: FormData,
         datatype: 'json',
         encode: true
